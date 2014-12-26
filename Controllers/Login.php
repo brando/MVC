@@ -3,15 +3,15 @@
  * Created by JetBrains PhpStorm.
  * User: admin
  * Date: 26.12.2014
- * Time: 16:15
+ * Time: 10:53
  * To change this template use File | Settings | File Templates.
  */
-
-class Controller
+class Login extends Controller
 {
     function  __construct()
     {
-        //echo 'Main Controller<br>';
-        $this->view=new View();
+        parent::__construct();   //vola triedu Controller
+        //echo 'som v index.<br>';
+        $this->view->render('login/index');
     }
 }

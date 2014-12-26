@@ -11,11 +11,17 @@ class Bootstrap
 {
     function  __construct()
     {
-        $url=$_GET['url'];
+        $url=isset($_GET['url']) ? $_GET['url'] : null;     //inaksie mi vyhodi  Undefined index: url in...
         //$url=rtrim($url,'/');       //v starsich php verziach to bolo potrebne tu to nieje ake ako demonstraciu som to ukazal
         $url=explode('/',$url);     //explode=?=>vytvori zo stringu array
        // print_r($url);
 
+        if(empty($url[0]))
+        {
+            require 'Controllers/Index.php';
+            $controller = new Index();
+            return false;  //preto false abz sa uy dalej co je pod false nevykonavalo; kludne som mohol: die('dalej nepokracujem');
+        }
         $file='Controllers/'.$url[0].'.php';
         if(file_exists($file))
         {

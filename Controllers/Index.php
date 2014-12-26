@@ -11,6 +11,7 @@ class Index extends Controller
     function  __construct()
     {
         parent::__construct();   //vola triedu Controller
-        echo 'som v index.<br>';
+        //echo 'som v index.<br>';
+        $this->view->render('index/index');
     }
 }

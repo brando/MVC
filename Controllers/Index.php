@@ -12,6 +12,11 @@ class Index extends Controller
     {
         parent::__construct();   //vola triedu Controller
         //echo 'som v index.<br>';
+    }
+
+    function index()
+    {
+
         $this->view->render('index/index');
     }
 }

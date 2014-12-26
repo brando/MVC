@@ -9,9 +9,9 @@
     <div id="header">
     header
         <br>
-        <a href="index">Index</a>
-        <a href="help">Help </a>
-        <a href="login">Login</a>
+        <a href="<?php echo URL;?>index">Index</a>
+        <a href="<?php echo URL;?>help">Help </a>
+        <a href="<?php echo URL;?>login">Login</a>
     </div>
 
     <div id="content">

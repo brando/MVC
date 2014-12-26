@@ -8,22 +8,28 @@
  */
 class Help extends Controller
 {
+
     function __construct()
     {
         parent::__construct();
         //echo 'som v help<br>';
+    }
+
+    function  index()
+    {
         $this->view->render("help/index");
     }
 
-    public function ahoj($parm)
+    public function ahoj($parm=false)
     {
         echo 'som v ahoj funkcii '.$parm;
 
-        
-        $this->view->msg='toto je message from help controller, a nebol zadany parameter<br>';
-        $this->view->render('error/index');
+
+        $this->view->msg='toto je message from help controller<br>';
+        $this->view->render('help/index');
 
         require 'Models/Help_model.php';
         $model = new Help_model();
+        $this->view->bla=$model->bla();
     }
 }

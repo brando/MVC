@@ -11,8 +11,8 @@ class Bootstrap
 {
     function  __construct()
     {
-        $url=isset($_GET['url']) ? $_GET['url'] : null;     //inaksie mi vyhodi  Undefined index: url in...
-        //$url=rtrim($url,'/');       //v starsich php verziach to bolo potrebne tu to nieje ake ako demonstraciu som to ukazal
+        $url=isset($_GET['url']) ? $_GET['url'] : null;     //inaksie by mi vyhodilo  Undefined index: url in...
+        $url=rtrim($url,'/');       //v starsich php verziach to bolo potrebne tu to nieje ake ako demonstraciu som to ukazal
         $url=explode('/',$url);     //explode=?=>vytvori zo stringu array
        // print_r($url);
 
@@ -20,6 +20,7 @@ class Bootstrap
         {
             require 'Controllers/Index.php';
             $controller = new Index();
+            $controller->index();
             return false;  //preto false abz sa uy dalej co je pod false nevykonavalo; kludne som mohol: die('dalej nepokracujem');
         }
         $file='Controllers/'.$url[0].'.php';
@@ -47,6 +48,9 @@ class Bootstrap
             if(isset($url[1]))
             {
                 $controller->$url[1]();           //$controller->function()
+            }else
+            {
+                $controller->index();
             }
         }
     }

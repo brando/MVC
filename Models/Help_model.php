@@ -13,4 +13,10 @@ class Help_model extends Model
     {
         echo 'help model<br>';
     }
+
+    function bla()
+    {
+        echo 'bla funkcia v help_model';
+        return 10+10;
+    }
 }

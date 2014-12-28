@@ -27,7 +27,8 @@ class login_model extends Model
             ));
        }catch (PDOException $e)
         {
-            echo "cosi zle ".$e->getMessage();
+            echo "Nepripojeny k databaze ".$e->getMessage();
+            exit();
         }
 
         $data = $sth->fetchAll();

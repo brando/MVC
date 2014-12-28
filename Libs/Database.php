@@ -15,11 +15,12 @@ class Database extends PDO
         {
             $username='root';
             $password='37949647';
-            parent::__construct('mysql:host=localhost;dbname:phpmyacademy;',$username,$password);
+            parent::__construct('mysql:host=localhost;dbname=phpmyacademy',$username,$password);
             parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e)
         {
             echo "Invalid username or password ".$e->getMessage();
+            exit();
         }
     }
 }

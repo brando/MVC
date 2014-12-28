@@ -7,6 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class database {
+class database
+{
+    function __construct()
+    {
 
+    }
 }

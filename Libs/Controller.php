@@ -14,4 +14,17 @@ class Controller
         //echo 'Main Controller<br>';
         $this->view=new View();
     }
+
+    public function loadModels($name)
+    {
+        $path ='Models/'.$name.'_model.php';
+       // echo $path;
+        if(file_exists($path))
+        {
+            require $path;
+
+            $modelName=$name.'_model';
+            $this->model=new $modelName();
+        }
+    }
 }

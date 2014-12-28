@@ -37,6 +37,7 @@ class Bootstrap
 
 
         $controller = new $url[0];
+        $controller->loadModels($url[0]);
 
 #najprv checknem co si dajake parametre lebo ak by boli a neskontroloval by som,
 #tak funkcia by sa zavolala a parametre mozno nie co by bol problem

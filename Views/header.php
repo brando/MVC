@@ -4,6 +4,12 @@
     <title>Test</title>
     <link rel="stylesheet" type="text/css" href="<?php echo URL;?>public/css/default.css" />
     <script type="text/javascript" src="<?php echo URL;?>public/js/jquery.js" ></script>
+    <?php
+        if(isset($this->js))
+        {
+            echo 1;
+        }
+    ?>
 </head>
 <body>
 

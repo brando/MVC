@@ -23,7 +23,7 @@ class login_model extends Model
 
             $sth->execute(array(
                 'login'=>$_POST['login'],
-                'password'=>$_POST['password']
+                'password'=>md5($_POST['password'])
             ));
        }catch (PDOException $e)
         {

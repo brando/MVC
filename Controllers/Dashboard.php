@@ -11,7 +11,7 @@ class Dashboard extends Controller
     function  __construct()
     {
         parent::__construct();   //vola triedu Controller
-        //echo 'som v index.<br>';
+
         Session::init();
         $logged = Session::get('loggedIn');
         if($logged == false)
@@ -20,6 +20,8 @@ class Dashboard extends Controller
             header('Location: ../login');
             exit;
         }
+
+        $this->view->js = array();
     }
 
     function index()
